@@ -1,17 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CO2NEX Architecture</title>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="CO2NEX Carbon Credit Platform Architecture Diagram">
+  <meta name="keywords" content="carbon-credit, blockchain, UNFCCC, climate-tech, mermaid.js, article-6, ERC-1155">
+  <meta name="author" content="CO2NEX Team">
+  <title>CO2NEX Architecture Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #00e676;
+    }
+    .mermaid {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+  </style>
 </head>
 <body>
-  <div class="mermaid">
+
+<h1>🌍 CO2NEX Architecture Flow</h1>
+
+<!-- Mermaid Diagram -->
+<pre class="mermaid">
 graph TD
-  A[🌍 Landowner Submission] --> B[...etc]
-  ...
-  </div>
+    %% ===== LANDOWNER ONBOARDING =====
+    A[🌍 Landowner Submission] -->|📄 KYC Package + 🏷️ Land Deeds| B[🏛️ UNFCCC Host Country Portal]
+    B -->|✅ Article 6.5 Authorization| C[🗺️ GeoJSON Polygon Upload]
+    C --> D[🆔 Project ID Generator]
+    D --> E[💾 Master Database Entry]
+
+    %% ===== SATELLITE VERIFICATION =====
+    E --> F1[🔥 NASA VIIRS Fire]
+    E --> F2[🛰️ Sentinel-2 NDVI/NDWI]
+    E --> F3[🌳 GEDI Lidar Biomass]
+    E --> F4[💨 GHGSat Methane]
+    E --> F5[🌧️ NOAA Precipitation]
+
+    %% ===== CORE CALCULATIONS =====
+    F2 --> G1[🌿 Above-Ground Carbon]
+    F3 --> G1
+    F2 --> G2[⛏️ Below-Ground Carbon]
+    F1 --> G3[🧯 Fire Risk Buffer]
+    F5 --> G4[💧 Water Credits]
+    F4 --> G5[☁️ Methane Flux]
+
+    G1 --> H[📊 IPCC Tier 3 Model]
+    G2 --> H
+    G3 --> H
+    G4 --> H
+    G5 --> H
+
+    %% ===== ARTICLE 6 COMPLIANCE =====
+    H --> I1[🔄 Corresponding Adjustment Calc]
+    H --> I2[🌐 SDG Impact Scoring]
+    I1 --> J[🎨 ITMO Token Designer]
+    I2 --> J
+
+    %% ===== BLOCKCHAIN INTEGRATION =====
+    J --> K[⛓️ ERC-1155 Minting]
+    K --> L[🔒 Double-Counting Prevention]
+    L --> M[♻️ On-Chain Retirement]
+
+    %% ===== MONITORING & REPORTING =====
+    M --> N1[📑 Monthly UNFCCC Reports]
+    M --> N2[📊 Real-Time Dashboard]
+    N1 --> O[🌍 Global Carbon Registry]
+    N2 --> P[👁️ Public Validator Nodes]
+
+    %% ===== RISK MITIGATION =====
+    P --> Q1[🌲 Deforestation Alerts]
+    P --> Q2[🔥 Fire Probability]
+    P --> Q3[🏜️ Drought Warning]
+    Q1 --> R[🛡️ Buffer Pool Adjustment]
+    Q2 --> R
+    Q3 --> R
+
+    %% ==== NEW CRITICAL NODES ====
+    E -->|Pre-Verification| X[🕵️‍♀️ Third-Party Audit Queue]
+    H --> Y[⚖️ Carbon/Water Credit Ratio]
+    R --> Z[🚨 Automatic Insurance Payouts]
+
+    %% ===== OPTIONAL EXTENSIONS =====
+    M -->|💰| T[💸 Tokenized Asset Ledger]
+    T --> U[📈 Price Discovery Engine]
+    U --> V[🤝 OTC Marketplace]
+
+    A -->|👥 Traditional Land Map| W[Indigenous Consent Verification]
+    W --> B
+
+    H -->|🧪| X1[Soil Core Validation]
+    H -->|🌡️| X2[Flux Tower Data]
+
+    %% ===== LEGEND COLORS =====
+    style A fill:#4CAF50,stroke:#388E3C
+    style B fill:#2196F3,stroke:#0D47A1
+    style K fill:#9C27B0,stroke:#6A1B9A
+    style O fill:#FF9800,stroke:#E65100
+    style X fill:#607D8B,stroke:#455A64
+    style Y fill:#00BCD4,stroke:#00838F
+    style Z fill:#F44336,stroke:#C62828
+</pre>
+
+<!-- Mermaid.js Script -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: "dark" });
+</script>
+
 </body>
 </html>
