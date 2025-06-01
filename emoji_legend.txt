@@ -1,0 +1,13 @@
+🌍 = Landowner Submission
+🛰️ = Sentinel-2 NDVI/NDWI
+🔥 = NASA VIIRS
+🌳 = GEDI Lidar
+💨 = GHGSat
+🌧️ = NOAA Precipitation
+💾 = Database Entry
+🧯 = Fire Risk Buffer
+🛡️ = Buffer Pool Adjustment
+🚨 = Insurance Trigger
+⚖️ = Credit Ratio
+⛓️ = Blockchain Minting
+♻️ = Credit Retirement
