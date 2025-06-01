@@ -1,0 +1,116 @@
+graph TD
+
+%% =========================
+%%   LANDOWNER ONBOARDING
+%% =========================
+A[🌍 Landowner Submission]
+  -->|📄 KYC Package + 🏷️ Land Deeds| B[🏛️ UNFCCC Host Country Portal]
+B -->|✅ Article 6.5 Authorization| C[🗺️ GeoJSON Polygon Upload]
+C --> D[🆔 Project ID Generator]
+D --> E[💾 Master Database Entry]
+
+%% =========================
+%%   STAKEHOLDER PROTECTIONS
+%% =========================
+A -->|📍 Traditional Land Map| W1[👥 Indigenous Consent Verification]
+W1 --> B
+
+%% =========================
+%%   PRE-VERIFICATION & AUDIT
+%% =========================
+E -->|Pre-Verification| X1[🕵️‍♀️ Third-Party Audit Queue]
+
+%% =========================
+%%   SATELLITE VERIFICATION
+%% =========================
+E --> F1[🔥 NASA VIIRS Fire]
+E --> F2[🛰️ Sentinel-2 NDVI/NDWI]
+E --> F3[🌳 GEDI Lidar Biomass]
+E --> F4[💨 GHGSat Methane]
+E --> F5[🌧️ NOAA Precipitation]
+
+%% =========================
+%%   CORE CALCULATIONS
+%% =========================
+F2 --> G1[🌿 Above-Ground Carbon]
+F3 --> G1
+F2 --> G2[⛏️ Below-Ground Carbon]
+F1 --> G3[🧯 Fire Risk Buffer]
+F5 --> G4[💧 Water Credits]
+F4 --> G5[☁️ Methane Flux]
+
+%% Additional Scientific Validation
+G1 --> X2[🧪 Soil Core Sampling]
+G1 --> X3[🌡️ Flux Tower Data]
+
+%% =========================
+%%   IPCC / ARTICLE 6 LOGIC
+%% =========================
+G1 --> H[📊 IPCC Tier 3 Model]
+G2 --> H
+G3 --> H
+G4 --> H
+G5 --> H
+X2 --> H
+X3 --> H
+
+%% New Output Metric
+H --> Y[⚖️ Carbon/Water Credit Ratio]
+
+%% =========================
+%%   COMPLIANCE FRAMEWORK
+%% =========================
+H --> I1[🔄 Corresponding Adjustment Calc]
+H --> I2[🌐 SDG Impact Scoring]
+I1 --> J[🎨 ITMO Token Designer]
+I2 --> J
+
+%% =========================
+%%   BLOCKCHAIN INTEGRATION
+%% =========================
+J --> K[⛓️ ERC-1155 Minting]
+K --> L[🔒 Double-Counting Prevention]
+L --> M[♻️ On-Chain Retirement]
+
+%% =========================
+%%   FINANCIAL PIPELINE
+%% =========================
+M --> T[💹 Tokenized Asset Ledger]
+T --> U[📈 Price Discovery Engine]
+U --> V[🤝 OTC & Exchange Listings]
+
+%% =========================
+%%   MONITORING & REPORTING
+%% =========================
+M --> N1[📑 Monthly UNFCCC Reports]
+M --> N2[📊 Real-Time Dashboard]
+N1 --> O[🌍 Global Carbon Registry]
+N2 --> P[👁️ Public Validator Nodes]
+
+%% =========================
+%%   RISK DETECTION
+%% =========================
+P --> Q1[🌲 Deforestation Alerts]
+P --> Q2[🔥 Fire Probability]
+P --> Q3[🏜️ Drought Warning]
+
+%% =========================
+%%   RISK RESPONSE
+%% =========================
+Q1 --> R[🛡️ Buffer Pool Adjustment]
+Q2 --> R
+Q3 --> R
+R --> Z[🚨 Automatic Insurance Payouts]
+
+%% =========================
+%%   STYLING
+%% =========================
+style A fill:#4CAF50,stroke:#388E3C
+style B fill:#2196F3,stroke:#0D47A1
+style K fill:#9C27B0,stroke:#6A1B9A
+style O fill:#FF9800,stroke:#E65100
+style X1 fill:#607D8B,stroke:#455A64
+style Y fill:#00BCD4,stroke:#00838F
+style Z fill:#F44336,stroke:#C62828
+style W1 fill:#795548,stroke:#3E2723
+style T fill:#FFEB3B,stroke:#FBC02D
