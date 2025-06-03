@@ -1,129 +1,145 @@
+%%{
+  init: {
+    "theme": "default",
+    "flowchart": {
+      "curve": "basis",
+      "nodeSpacing": 60,
+      "rankSpacing": 70
+    },
+    "themeVariables": {
+      "fontSize": "18px",
+      "primaryColor": "#ffffff",
+      "edgeLabelBackground": "#ffffff"
+    }
+  }
+}%%
 flowchart TD
-  %% === PROJECT GOAL ===
-  A0([CO2NEX Carbon Map Engine])
-  A1([Goal: Real-time, Interactive Carbon Credit Dashboard])
 
-  %% === MAP CONTENT STRUCTURE ===
-  B0([Map Content])
-  B1([Verified State and Biome Layers])
-  B2([Parcel Boundaries - GeoJSON])
-  B3([Site Visit Photos - GeoTagged])
-  B4([Lab Reports - Soil, Water, Biomass])
-  B5([AI and Satellite Carbon Calculations])
-  B6([Live Sequestration Estimate])
-  B7([Credit Issuance per Landowner])
+%% === PROJECT GOAL ===
+A0([🗺️ CO2NEX Carbon Map Engine])
+A1([🎯 Goal: Real-time, Interactive Carbon Credit Dashboard])
 
-  %% === MAP LAYERS ===
-  C0([Map Layers])
-  C1([Satellite Imagery])
-  C2([Terrain, NDVI])
-  C3([Parcel Boundaries Layer])
-  C4([Biome Classification Overlay])
-  C5([Sampling Points])
-  C6([Vegetation and Biomass Cover])
-  C7([Carbon Calculation Overlay])
-  C8([Photo Popups])
-  C9([Lab Report Downloads])
+%% === MAP CONTENT STRUCTURE ===
+B0([🧱 Map Content])
+B1([✅ Verified State & Biome Layers])
+B2([📍 Parcel Boundaries - GeoJSON])
+B3([📸 Site Visit Photos - GeoTagged])
+B4([🧪 Lab Reports - Soil, Water, Biomass])
+B5([🧠 AI + 🛰️ Satellite Carbon Calculations])
+B6([📈 Live Sequestration Estimate])
+B7([🏷️ Credit Issuance per Landowner])
 
-  %% === DATA PIPELINE ===
-  D0([Data Collection Pipeline])
-  D1([Site Photos - JPG with GPS])
-  D2([Soil Samples - PDF or CSV])
-  D3([Water Samples - PDF or CSV])
-  D4([Biomass Density Data])
-  D5([Satellite Metrics - NDVI, LST])
-  D6([AI Carbon Estimates])
-  D7([Landowner Metadata])
-  D8([Credit Issuance PDF])
+%% === MAP LAYERS ===
+C0([🧩 Map Layers])
+C1([🛰️ Satellite Imagery])
+C2([🌄 Terrain, NDVI])
+C3([🗺️ Parcel Boundaries Layer])
+C4([🌳 Biome Classification Overlay])
+C5([📌 Sampling Points])
+C6([🌱 Vegetation & Biomass Cover])
+C7([📊 Carbon Calculation Overlay])
+C8([🖼️ Photo Popups])
+C9([📥 Lab Report Downloads])
 
-  %% === AI / SAT MODULE ===
-  E0([AI and Satellite Module])
-  E1([Sentinel/Landsat Inputs])
-  E2([NDVI, EVI, Moisture Models])
-  E3([Biomass Calculations via GEE])
-  E4([AI Models - TensorFlow or ML])
-  E5([Confidence Score Layers])
+%% === DATA PIPELINE ===
+D0([🔁 Data Collection Pipeline])
+D1([📷 Site Photos - JPG + GPS])
+D2([🧫 Soil Samples - PDF/CSV])
+D3([💧 Water Samples - PDF/CSV])
+D4([🌿 Biomass Density Data])
+D5([🌐 Satellite Metrics - NDVI, LST])
+D6([🤖 AI Carbon Estimates])
+D7([🧾 Landowner Metadata])
+D8([📄 Credit Issuance PDF])
 
-  %% === USER VIEW ===
-  F0([User Interface])
-  F1([Zoomed Parcel View])
-  F2([Toggle Satellite and Biome Layers])
-  F3([Popups with Photos and Reports])
-  F4([Popups with Carbon and Timestamps])
-  F5([Dashboard - Total Carbon Stored])
-  F6([Dashboard - Annual Sequestration])
-  F7([Verification Source Display])
+%% === AI / SAT MODULE ===
+E0([🤖 AI + Satellite Module])
+E1([🛰️ Sentinel / Landsat Inputs])
+E2([🌿 NDVI, EVI, Moisture Models])
+E3([📉 Biomass Calc via GEE])
+E4([🧠 TensorFlow / ML Models])
+E5([🧭 Confidence Score Layers])
 
-  %% === TECH STACK ===
-  G0([Tech Stack])
-  G1([Google Earth Engine])
-  G2([Firebase or Supabase])
-  G3([React or Next.js])
-  G4([Leaflet or Mapbox])
-  G5([Cloud Storage or IPFS])
-  G6([QR Code Integration])
+%% === USER VIEW ===
+F0([🖥️ User Interface])
+F1([🔍 Zoomed Parcel View])
+F2([🧭 Toggle Satellite + Biome])
+F3([📸 Popups - Photos/Reports])
+F4([⏱️ Popups - Carbon + Timestamp])
+F5([📊 Dashboard - Total Carbon])
+F6([📈 Dashboard - Annual Sequestration])
+F7([🔍 Verification Sources Shown])
 
-  %% === NEXT STEPS ===
-  H0([Next Steps Execution Plan])
-  H1([Finalize State and Biome Maps])
-  H2([Structure Site Visit Data])
-  H3([Build First Parcel GeoJSON])
-  H4([Write GEE Integration Script])
-  H5([Publish Public Dashboard])
-  H6([Add Shareable QR and Links])
+%% === TECH STACK ===
+G0([🧰 Tech Stack])
+G1([🌎 Google Earth Engine])
+G2([☁️ Firebase or Supabase])
+G3([⚛️ React / Next.js])
+G4([🗺️ Leaflet or Mapbox])
+G5([🧱 Cloud Storage or IPFS])
+G6([🔗 QR Code Integration])
 
-  %% === LINKS ===
-  A0 --> A1
-  A1 --> B0
+%% === NEXT STEPS ===
+H0([📅 Next Steps])
+H1([✅ Finalize State & Biome Maps])
+H2([📁 Structure Site Visit Data])
+H3([🗂️ Build First Parcel GeoJSON])
+H4([💻 Write GEE Integration Script])
+H5([🌐 Publish Public Dashboard])
+H6([🔗 Add Shareable QR + Links])
 
-  B0 --> B1 --> C4
-  B0 --> B2 --> C3
-  B0 --> B3 --> C8
-  B0 --> B4 --> C9
-  B0 --> B5 --> C7
-  B0 --> B6 --> C7
-  B0 --> B7 --> F5
+%% === LINKS ===
+A0 --> A1
+A1 --> B0
 
-  B0 --> C0
-  C0 --> C1
-  C0 --> C2
-  C0 --> C5
-  C0 --> C6
+B0 --> B1 --> C4
+B0 --> B2 --> C3
+B0 --> B3 --> C8
+B0 --> B4 --> C9
+B0 --> B5 --> C7
+B0 --> B6 --> C7
+B0 --> B7 --> F5
 
-  B0 --> D0
-  D0 --> D1
-  D0 --> D2
-  D0 --> D3
-  D0 --> D4
-  D0 --> D5
-  D0 --> D6
-  D0 --> D7
-  D0 --> D8
+B0 --> C0
+C0 --> C1
+C0 --> C2
+C0 --> C5
+C0 --> C6
 
-  B5 --> E0
-  E0 --> E1 --> E2 --> E3 --> E4 --> E5
+B0 --> D0
+D0 --> D1
+D0 --> D2
+D0 --> D3
+D0 --> D4
+D0 --> D5
+D0 --> D6
+D0 --> D7
+D0 --> D8
 
-  B0 --> F0
-  F0 --> F1
-  F0 --> F2
-  F0 --> F3
-  F0 --> F4
-  F0 --> F5
-  F0 --> F6
-  F0 --> F7
+B5 --> E0
+E0 --> E1 --> E2 --> E3 --> E4 --> E5
 
-  A0 --> G0
-  G0 --> G1
-  G0 --> G2
-  G0 --> G3
-  G0 --> G4
-  G0 --> G5
-  G0 --> G6
+B0 --> F0
+F0 --> F1
+F0 --> F2
+F0 --> F3
+F0 --> F4
+F0 --> F5
+F0 --> F6
+F0 --> F7
 
-  A0 --> H0
-  H0 --> H1
-  H0 --> H2
-  H0 --> H3
-  H0 --> H4
-  H0 --> H5
-  H0 --> H6
+A0 --> G0
+G0 --> G1
+G0 --> G2
+G0 --> G3
+G0 --> G4
+G0 --> G5
+G0 --> G6
+
+A0 --> H0
+H0 --> H1
+H0 --> H2
+H0 --> H3
+H0 --> H4
+H0 --> H5
+H0 --> H6
