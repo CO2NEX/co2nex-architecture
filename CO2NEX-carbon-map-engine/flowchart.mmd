@@ -1,115 +1,127 @@
 %%{init: {
   'theme': 'default',
-  'flowchart': { 'curve': 'basis' },
   'themeVariables': {
-    'fontSize': '18px',
-    'primaryColor': '#4CAF50',
+    'fontSize': '16px',
+    'primaryColor': '#2c3e50',
+    'primaryBorderColor': '#34495e',
+    'primaryTextColor': '#ecf0f1',
     'edgeLabelBackground':'#ffffff',
-    'clusterBkg': '#e0f7fa',
-    'clusterBorder': '#26a69a'
+    'clusterBkg': '#ecf0f1',
+    'clusterBorder': '#bdc3c7',
+    'lineColor': '#7f8c8d',
+    'tertiaryColor': '#e0f7fa'
   },
-  'logLevel': 'fatal'
+  'themeConfig': {
+    'nodeTextMargin': 6,
+    'padding': 15
+  },
+  'flowchart': {
+    'useMaxWidth': false,
+    'htmlLabels': true,
+    'curve': 'basis'
+  }
 }}%%
+
 graph TD
+    %% =========================
+    %%   🧠 PROJECT OVERVIEW
+    %% =========================
+    A0[🛰️ CO2NEX Carbon Map Engine]:::main
+    A1[🎯 Goal: Real-Time Carbon Dashboard]:::goal
+    A0 --> A1
 
-%% =========================
-%%   🧠 PROJECT OVERVIEW
-%% =========================
-A0[🛰️ CO2NEX Carbon Map Engine]
-A1[🎯 Goal: Real-Time Carbon Dashboard]
-A0 --> A1
+    %% =========================
+    %%   🗺️ MAP CONTENT
+    %% =========================
+    A1 --> B0[🗂️ Map Content Layers]:::content
+    B0 --> B1[🌍 Verified States & Biomes]
+    B0 --> B2[📐 GeoJSON Parcel Boundaries]
+    B0 --> B3[📸 GeoTagged Site Photos]
+    B0 --> B4[🧪 Lab Reports: Soil/Water/Biomass]
+    B0 --> B5[🧠 AI + Satellite Carbon Calculations]
+    B0 --> B6[⏱️ Live Carbon Sequestration]
+    B0 --> B7[📈 Credit Issuance by Parcel]
 
-%% =========================
-%%   🗺️ MAP CONTENT
-%% =========================
-A1 --> B0[🗂️ Map Content Layers]
-B0 --> B1[🌍 Verified States & Biomes]
-B0 --> B2[📐 GeoJSON Parcel Boundaries]
-B0 --> B3[📸 GeoTagged Site Photos]
-B0 --> B4[🧪 Lab Reports: Soil/Water/Biomass]
-B0 --> B5[🧠 AI + Satellite Carbon Calculations]
-B0 --> B6[⏱️ Live Carbon Sequestration]
-B0 --> B7[📈 Credit Issuance by Parcel]
+    %% =========================
+    %%   🧩 MAP LAYERS
+    %% =========================
+    B0 --> C0[🗺️ Visual Map Layers]:::layers
+    C0 --> C1[🛰️ Satellite Imagery]
+    C0 --> C2[🌄 Terrain + NDVI]
+    C0 --> C3[📍 Parcel Layer]
+    C0 --> C4[🌱 Biome Overlay]
+    C0 --> C5[📌 Sampling Points]
+    C0 --> C6[🌿 Vegetation/Biomass Layer]
+    C0 --> C7[🌡️ Carbon Calc Overlay]
+    C0 --> C8[📸 Photo Popups]
+    C0 --> C9[📄 Lab Downloads]
 
-%% =========================
-%%   🧩 MAP LAYERS
-%% =========================
-B0 --> C0[🗺️ Visual Map Layers]
-C0 --> C1[🛰️ Satellite Imagery]
-C0 --> C2[🌄 Terrain + NDVI]
-C0 --> C3[📍 Parcel Layer]
-C0 --> C4[🌱 Biome Overlay]
-C0 --> C5[📌 Sampling Points]
-C0 --> C6[🌿 Vegetation/Biomass Layer]
-C0 --> C7[🌡️ Carbon Calc Overlay]
-C0 --> C8[📸 Photo Popups]
-C0 --> C9[📄 Lab Downloads]
+    %% =========================
+    %%   🔁 DATA PIPELINE
+    %% =========================
+    B0 --> D0[📥 Data Collection]:::data
+    D0 --> D1[📷 Site Photos JPG + GPS]
+    D0 --> D2[🧪 Soil Data PDF/CSV]
+    D0 --> D3[💧 Water Samples]
+    D0 --> D4[🌾 Biomass Density]
+    D0 --> D5[🛰️ Satellite Metrics NDVI/LST]
+    D0 --> D6[🧠 AI Carbon Estimate]
+    D0 --> D7[🧾 Landowner Metadata]
+    D0 --> D8[📄 Credit Issuance Docs]
 
-%% =========================
-%%   🔁 DATA PIPELINE
-%% =========================
-B0 --> D0[📥 Data Collection]
-D0 --> D1[📷 Site Photos JPG + GPS]
-D0 --> D2[🧪 Soil Data PDF/CSV]
-D0 --> D3[💧 Water Samples]
-D0 --> D4[🌾 Biomass Density]
-D0 --> D5[🛰️ Satellite Metrics NDVI/LST]
-D0 --> D6[🧠 AI Carbon Estimate]
-D0 --> D7[🧾 Landowner Metadata]
-D0 --> D8[📄 Credit Issuance Docs]
+    %% =========================
+    %%   🧠 AI / SATELLITE
+    %% =========================
+    B5 --> E0[🧠 AI + Satellite Module]:::ai
+    E0 --> E1[🛰️ Sentinel / Landsat Inputs]
+    E1 --> E2[📊 NDVI, EVI, Moisture Models]
+    E2 --> E3[🌿 Biomass via GEE]
+    E3 --> E4[🤖 TensorFlow / ML Models]
+    E4 --> E5[🎯 Confidence Score Layers]
 
-%% =========================
-%%   🧠 AI / SATELLITE
-%% =========================
-B5 --> E0[🧠 AI + Satellite Module]
-E0 --> E1[🛰️ Sentinel / Landsat Inputs]
-E1 --> E2[📊 NDVI, EVI, Moisture Models]
-E2 --> E3[🌿 Biomass via GEE]
-E3 --> E4[🤖 TensorFlow / ML Models]
-E4 --> E5[🎯 Confidence Score Layers]
+    %% =========================
+    %%   👀 USER INTERFACE
+    %% =========================
+    B0 --> F0[🖥️ User Dashboard]:::ui
+    F0 --> F1[🔍 Zoomed Parcel View]
+    F0 --> F2[🧭 Toggle Satellite/Biome Layers]
+    F0 --> F3[📸 Popups: Photos + Reports]
+    F0 --> F4[⏱️ Popups: Carbon + Timestamps]
+    F0 --> F5[📊 Dashboard: Total Stored Carbon]
+    F0 --> F6[📈 Dashboard: Annual Sequestration]
+    F0 --> F7[🔍 Verification Source Display]
 
-%% =========================
-%%   👀 USER INTERFACE
-%% =========================
-B0 --> F0[🖥️ User Dashboard]
-F0 --> F1[🔍 Zoomed Parcel View]
-F0 --> F2[🧭 Toggle Satellite / Biome Layers]
-F0 --> F3[📸 Popups: Photos + Reports]
-F0 --> F4[⏱️ Popups: Carbon + Timestamps]
-F0 --> F5[📊 Dashboard: Total Stored Carbon]
-F0 --> F6[📈 Dashboard: Annual Sequestration]
-F0 --> F7[🔍 Verification Source Display]
+    %% =========================
+    %%   🧱 TECH STACK
+    %% =========================
+    A0 --> G0[🧱 Tech Stack]:::tech
+    G0 --> G1[🌐 Google Earth Engine]
+    G0 --> G2[🔥 Firebase / Supabase]
+    G0 --> G3[⚛️ React / Next.js]
+    G0 --> G4[🗺️ Leaflet / Mapbox]
+    G0 --> G5[☁️ Cloud / IPFS Storage]
+    G0 --> G6[📎 QR Code Integration]
 
-%% =========================
-%%   🧱 TECH STACK
-%% =========================
-A0 --> G0[🧱 Tech Stack]
-G0 --> G1[🌐 Google Earth Engine]
-G0 --> G2[🔥 Firebase / Supabase]
-G0 --> G3[⚛️ React / Next.js]
-G0 --> G4[🗺️ Leaflet / Mapbox]
-G0 --> G5[☁️ Cloud / IPFS Storage]
-G0 --> G6[📎 QR Code Integration]
+    %% =========================
+    %%   📅 NEXT STEPS
+    %% =========================
+    A0 --> H0[📅 Execution Plan]:::plan
+    H0 --> H1[🧭 Finalize State + Biome Maps]
+    H0 --> H2[📸 Structure Site Visit Uploads]
+    H0 --> H3[📐 Build First GeoJSON Parcel]
+    H0 --> H4[🧠 GEE Integration Script]
+    H0 --> H5[🌍 Publish Public Dashboard]
+    H0 --> H6[🔗 Add Shareable QR Links]
 
-%% =========================
-%%   📅 NEXT STEPS
-%% =========================
-A0 --> H0[📅 Execution Plan]
-H0 --> H1[🧭 Finalize State + Biome Maps]
-H0 --> H2[📸 Structure Site Visit Uploads]
-H0 --> H3[📐 Build First GeoJSON Parcel]
-H0 --> H4[🧠 GEE Integration Script]
-H0 --> H5[🌍 Publish Public Dashboard]
-H0 --> H6[🔗 Add Shareable QR Links]
-
-%% =========================
-%%   STYLING
-%% =========================
-style A0 fill:#4CAF50,stroke:#2E7D32
-style B0 fill:#2196F3,stroke:#0D47A1
-style C0 fill:#03A9F4,stroke:#0277BD
-style D0 fill:#FFC107,stroke:#FFA000
-style E0 fill:#9C27B0,stroke:#6A1B9A
-style F0 fill:#8BC34A,stroke:#558B2F
-style G0 fill:#FF9800,stroke:#EF6C00
-style H0 fill:#00BCD4,stroke:#00838F
+    %% =========================
+    %%   CLASS DEFINITIONS
+    %% =========================
+    classDef main fill:#2c3e50,stroke:#34495e,color:#ecf0f1,font-weight:bold
+    classDef goal fill:#27ae60,stroke:#2ecc71,color:#ffffff
+    classDef content fill:#3498db,stroke:#2980b9,color:#ffffff
+    classDef layers fill:#9b59b6,stroke:#8e44ad,color:#ffffff
+    classDef data fill:#f39c12,stroke:#e67e22,color:#ffffff
+    classDef ai fill:#e74c3c,stroke:#c0392b,color:#ffffff
+    classDef ui fill:#1abc9c,stroke:#16a085,color:#ffffff
+    classDef tech fill:#7f8c8d,stroke:#95a5a6,color:#ffffff
+    classDef plan fill:#34495e,stroke:#2c3e50,color:#ffffff
