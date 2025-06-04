@@ -77,7 +77,7 @@ The final GEE-powered map interface (public viewer) will show:
 
 > This flowchart contains the entire system layout — from parcel creation to carbon issuance and map dashboard display.
 
-👉 [**View the Mermaid Flowchart ›**](./diagrams/flowchart.mmd)
+👉 [**View the Mermaid Flowchart ›**](CO2NEX-carbon-map-engine/flowchart.mmd)
 
 You can also view it rendered at:
 ```mermaid
